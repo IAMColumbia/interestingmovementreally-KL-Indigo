@@ -11,7 +11,9 @@ namespace InterestingMovement
 {
     public class PacMan : Sprite
     {
-        enum pacstate { }
+        public enum pacstate { basic, floating, rotating }
+        pacstate currentstate;
+        KeyboardHandler keyboard;
         float rotationangle;
         public bool isonground;
         public int ground;
@@ -26,9 +28,11 @@ namespace InterestingMovement
         public override void Update(GameTime gt)
         {
             UpdateKeepPacManOnScreen();
-            UpdatePacManSpeed();
-            UpdatePacManState();
+            //UpdatePacManSpeed();
             UpdatePacManIsOnGround();
+            UpdateKeyboardInput(gt);
+            UpdatePacManState();
+            
             base.Update(gt);
         }
 
@@ -51,7 +55,27 @@ namespace InterestingMovement
 
         private void UpdatePacManState()
         {
+            switch (currentstate)
+            {
+                case pacstate.basic:
+                    if (keyboard.WasKeyPressed(Keys.Space) && this.isonground == true)
+                    {
+                        this.direction += new Vector2(0, this.jump);
+                        this.isonground = false;
+                    }
 
+                    //
+                    break;
+
+                case pacstate.floating:
+                    //
+                    //
+                    break;
+                case pacstate.rotating:
+                    //
+                    //
+                    break;
+            }
         }
 
         public void UpdatePacManIsOnGround()
@@ -63,6 +87,41 @@ namespace InterestingMovement
             else
             {
                 isonground = false;
+            }
+        }
+
+        private void UpdateKeyboardInput(GameTime gametime)
+        {
+            keyboard.Update();
+
+            if (keyboard.WasKeyPressed(Keys.Down))
+            {
+                this.direction += new Vector2(0, 1);
+            }
+            if (keyboard.WasKeyPressed(Keys.Up))
+            {
+                this.direction += new Vector2(0, -1);
+            }
+            if (keyboard.WasKeyPressed(Keys.Right))
+            {
+                this.direction += new Vector2(1, 0);
+            }
+            if (keyboard.WasKeyPressed(Keys.Left))
+            {
+                this.direction += new Vector2(-1, 0);
+            }
+
+            if (keyboard.WasKeyPressed(Keys.B))
+            {
+                currentstate = pacstate.basic;
+            }
+            if (keyboard.WasKeyPressed(Keys.F))
+            {
+                currentstate = pacstate.floating;
+            }
+            if (keyboard.WasKeyPressed(Keys.R))
+            {
+                currentstate = pacstate.rotating;
             }
         }
     }

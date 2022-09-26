@@ -12,7 +12,7 @@ namespace InterestingMovement
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spritebatch;
-        KeyboardHandler keyboard;
+        //KeyboardHandler keyboard;
         SpriteFont font;
         PacMan pac;
 
@@ -43,7 +43,7 @@ namespace InterestingMovement
             }  
 
             float time = (float)gametime.ElapsedGameTime.TotalMilliseconds;
-            UpdateKeyboardInput(gametime);
+            //UpdateKeyboardInput(gametime);
 
             base.Update(gametime);
         }
@@ -59,14 +59,6 @@ namespace InterestingMovement
             base.Draw(gametime);
         }
 
-        private void UpdateKeyboardInput(GameTime gametime)
-        {
-            keyboard.Update();
-            if (keyboard.WasKeyPressed(Keys.Space) && pac.isonground == true)
-            {
-                pac.direction += new Vector2(0, pac.jump);
-                pac.isonground = false;
-            }
-        }
+        
     }
 }
