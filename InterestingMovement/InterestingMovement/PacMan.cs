@@ -13,10 +13,14 @@ namespace InterestingMovement
     {
         enum pacstate { }
         float rotationangle;
-        
+        public bool isonground;
+        public int ground;
+
         public PacMan(Game game) : base(game)
         {
-
+            texture = game.Content.Load<Texture2D>("PacmanSingle");
+            ground = 475;
+            jump = 20;
         }
 
         public override void Update(GameTime gt)
@@ -24,6 +28,7 @@ namespace InterestingMovement
             UpdateKeepPacManOnScreen();
             UpdatePacManSpeed();
             UpdatePacManState();
+            UpdatePacManIsOnGround();
             base.Update(gt);
         }
 
@@ -47,6 +52,18 @@ namespace InterestingMovement
         private void UpdatePacManState()
         {
 
+        }
+
+        public void UpdatePacManIsOnGround()
+        {
+            if (this.location.Y == ground - this.texture.Height)
+            {
+                isonground = true;
+            }
+            else
+            {
+                isonground = false;
+            }
         }
     }
 }

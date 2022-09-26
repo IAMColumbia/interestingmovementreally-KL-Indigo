@@ -12,7 +12,9 @@ namespace InterestingMovement
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spritebatch;
+        KeyboardHandler keyboard;
         SpriteFont font;
+        PacMan pac;
 
         public Game1()
         {
@@ -23,8 +25,6 @@ namespace InterestingMovement
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -38,9 +38,12 @@ namespace InterestingMovement
         protected override void Update(GameTime gametime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }  
 
-            // TODO: Add your update logic here
+            float time = (float)gametime.ElapsedGameTime.TotalMilliseconds;
+            UpdateKeyboardInput(gametime);
 
             base.Update(gametime);
         }
@@ -49,14 +52,21 @@ namespace InterestingMovement
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            _spritebatch.Begin();
+            //
+            _spritebatch.End();
 
             base.Draw(gametime);
         }
 
-        private void UpdateKeyboardHandler()
+        private void UpdateKeyboardInput(GameTime gametime)
         {
-
+            keyboard.Update();
+            if (keyboard.WasKeyPressed(Keys.Space) && pac.isonground == true)
+            {
+                pac.direction += new Vector2(0, pac.jump);
+                pac.isonground = false;
+            }
         }
     }
 }

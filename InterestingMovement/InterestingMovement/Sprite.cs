@@ -28,9 +28,10 @@ namespace InterestingMovement
         protected Game game;
         protected float speed;
         protected float rotation;
-        protected Vector2 location;
-        protected Vector2 direction;
-        protected Vector2 origin;
+        public int jump;
+        public Vector2 location;
+        public Vector2 direction;
+        public Vector2 origin;
         protected Rectangle defaultrectangle;
         protected Texture2D texture;
 
