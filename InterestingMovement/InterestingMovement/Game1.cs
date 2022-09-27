@@ -21,6 +21,7 @@ namespace InterestingMovement
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            pac = new PacMan(this) { texturename = "pacmanSingle" };
         }
 
         protected override void Initialize()
@@ -53,12 +54,10 @@ namespace InterestingMovement
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spritebatch.Begin();
-            //
+            pac.Draw(_spritebatch);
             _spritebatch.End();
 
             base.Draw(gametime);
         }
-
-        
     }
 }

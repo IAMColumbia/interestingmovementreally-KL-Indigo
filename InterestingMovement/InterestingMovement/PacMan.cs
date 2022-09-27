@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct2D1;
 
 namespace InterestingMovement
 {
@@ -20,9 +21,9 @@ namespace InterestingMovement
 
         public PacMan(Game game) : base(game)
         {
-            texture = game.Content.Load<Texture2D>("PacmanSingle");
             ground = 475;
             jump = 20;
+            weight = 10;
         }
 
         public override void Update(GameTime gt)

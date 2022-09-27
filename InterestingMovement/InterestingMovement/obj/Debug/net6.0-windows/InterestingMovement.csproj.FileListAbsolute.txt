@@ -35,3 +35,5 @@ C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\
 C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\InterestingMovement\InterestingMovement\obj\Debug\net6.0-windows\InterestingMovement.pdb
 C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\InterestingMovement\InterestingMovement\obj\Debug\net6.0-windows\InterestingMovement.genruntimeconfig.cache
 C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\InterestingMovement\InterestingMovement\obj\Debug\net6.0-windows\ref\InterestingMovement.dll
+C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\InterestingMovement\InterestingMovement\bin\Debug\net6.0-windows\Content\Font.xnb
+C:\Users\kenli\OneDrive\Desktop\PROG-310-01\interestingmovementreally-KL-Indigo\InterestingMovement\InterestingMovement\bin\Debug\net6.0-windows\Content\PacmanSingle.xnb
