@@ -9,48 +9,48 @@ using Microsoft.Xna.Framework.Input;
 
 namespace InterestingMovement
 {
-    public class KeyboardHandler
+    public class InputHandler
     {
         private KeyboardState previousstate;
-        private KeyboardState currentstate;
+        private KeyboardState currentkeyboardstate;
 
-        public KeyboardHandler()
+        public InputHandler()
         {
             previousstate = Keyboard.GetState();
         }
 
         public bool IsKeyDown(Keys key)
         {
-            return (currentstate.IsKeyDown(key));
+            return (currentkeyboardstate.IsKeyDown(key));
         }
 
         public bool IsHoldingKey(Keys key)
         {
-            return (currentstate.IsKeyDown(key) && previousstate.IsKeyDown(key));
+            return (currentkeyboardstate.IsKeyDown(key) && previousstate.IsKeyDown(key));
         }
 
         public bool WasKeyPressed(Keys key)
         {
-            return (currentstate.IsKeyDown(key) && previousstate.IsKeyUp(key));
+            return (currentkeyboardstate.IsKeyDown(key) && previousstate.IsKeyUp(key));
         }
 
         public bool HasReleasedKey(Keys key)
         {
-            return (currentstate.IsKeyUp(key) && previousstate.IsKeyDown(key));
+            return (currentkeyboardstate.IsKeyUp(key) && previousstate.IsKeyDown(key));
         }
 
         public void Update()
         {
             //set our previous state to our new state
-            previousstate = currentstate;
+            previousstate = currentkeyboardstate;
 
             //get our new state
-            currentstate = Keyboard.GetState();
+            currentkeyboardstate = Keyboard.GetState();
         }
 
         public bool WasAnyKeyPressed()
         {
-            Keys[] keyspressed = currentstate.GetPressedKeys();
+            Keys[] keyspressed = currentkeyboardstate.GetPressedKeys();
 
             if (keyspressed.Length > 0)
             {
@@ -62,7 +62,6 @@ namespace InterestingMovement
                     }
                 }
             }
-
             return false;
         }
     }

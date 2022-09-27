@@ -10,41 +10,43 @@ namespace InterestingMovement
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spritebatch;
-        //KeyboardHandler keyboard;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spritebatch;
         SpriteFont font;
         PacMan pac;
 
         public Game1()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            pac = new PacMan(this) { texturename = "pacmanSingle" };
+
+            pac = new PacMan(this);
         }
 
         protected override void Initialize()
         {
+            // TODO: Add your initialization logic here
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _spritebatch = new SpriteBatch(GraphicsDevice);
+            spritebatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            font = Content.Load<SpriteFont>("Font");
+            pac.LoadContent();
         }
 
         protected override void Update(GameTime gametime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
                 Exit();
-            }  
 
-            float time = (float)gametime.ElapsedGameTime.TotalMilliseconds;
-            //UpdateKeyboardInput(gametime);
+            // TODO: Add your update logic here
+            pac.Update(gametime);
 
             base.Update(gametime);
         }
@@ -53,9 +55,11 @@ namespace InterestingMovement
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spritebatch.Begin();
-            pac.Draw(_spritebatch);
-            _spritebatch.End();
+            // TODO: Add your drawing code here
+            spritebatch.Begin();
+            pac.Draw(spritebatch);
+            spritebatch.DrawString(font, $"Check Left Key: {pac.keyboard.WasKeyPressed(Keys.Left)} {pac.keyboard.IsKeyDown(Keys.Left)}\nCheck Speed: {pac.speed}\nCheck Direction: {pac.direction}\nCheck Position: {pac.location}", new Vector2(10, 10), Color.Black);
+            spritebatch.End();
 
             base.Draw(gametime);
         }
