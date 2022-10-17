@@ -72,7 +72,7 @@ namespace OneButtonGame
 
             // TODO: Add your update logic here
             circle.KeepMovingAcrossScreen(this);
-            UpdateCircleMovement();
+            UpdateCircleMovement(time);
             CheckForCollision();
             
             base.Update(gametime);
@@ -87,8 +87,8 @@ namespace OneButtonGame
             spritebatch.DrawString(font, "test text", new Vector2(10, 10), Color.Black);
             spritebatch.DrawString(font, circle.position.ToString(), new Vector2(10, 30), Color.Black); //test
             spritebatch.DrawString(font, square.position.ToString(), new Vector2(10, 50), Color.Black); //test
-            spritebatch.Draw(square.texture, middlesquare, Color.White);
-            spritebatch.Draw(circle.texture, middlecircle, Color.White);
+            spritebatch.Draw(square.texture, square.position, Color.White);
+            spritebatch.Draw(circle.texture, circle.position, Color.White);
             //CheckForCollision();
             if (Keyboard.GetState().IsKeyDown(button))
             {
@@ -154,7 +154,7 @@ namespace OneButtonGame
             }
         }
 
-        public void UpdateCircleMovement()
+        public void UpdateCircleMovement(float time)
         {
             circle.position = circle.position + (circle.Direction * circle.Speed * (time/1000));
         }
