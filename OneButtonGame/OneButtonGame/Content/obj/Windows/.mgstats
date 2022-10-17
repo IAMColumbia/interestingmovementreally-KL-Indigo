@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/BlackRing.png","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/bin/Windows/BlackRing.xnb","TextureProcessor","Texture2DContent",1916,22585,1.3330057
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/Font.spritefont","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/bin/Windows/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,1.5149319
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/RedSquare.png","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/OneButtonGame/OneButtonGame/Content/bin/Windows/RedSquare.xnb","TextureProcessor","Texture2DContent",318,10489,0.0690747

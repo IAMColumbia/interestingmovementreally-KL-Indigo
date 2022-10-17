@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Class2Practice/Class2Practice/Content/File.spritefont","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Class2Practice/Class2Practice/Content/bin/Windows/Content/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.3541136
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Class2Practice/Class2Practice/Content/spongebobresized.png","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Class2Practice/Class2Practice/Content/bin/Windows/Content/spongebobresized.xnb","TextureProcessor","Texture2DContent",22060,60085,0.0250967

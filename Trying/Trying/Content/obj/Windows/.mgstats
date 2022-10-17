@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Trying/Trying/Content/Font.spritefont","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Trying/Trying/Content/bin/Windows/Font.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.3430974
+"C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Trying/Trying/Content/PacmanSingle.png","C:/Users/kenli/OneDrive/Desktop/PROG-310-01/Trying/Trying/Content/bin/Windows/PacmanSingle.xnb","TextureProcessor","Texture2DContent",2204,11533,0.0445487
