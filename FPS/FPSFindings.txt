@@ -1,0 +1,7 @@
+I tested the hypothesis that drawing multiple sprites with the Deferred SortMode annd the Opaque BlendState would give more frames than with Immediate and AlphaBlend.
+
+I had a SpriteBatch repetedly draw the same sprite with these two different batches one at a time.
+
+Both batches went to 60 frames and then stopped. However the one using Deffered and Opaque made it impossible to read the text.
+
+Nothing happened like I expected it to and I am very confused
